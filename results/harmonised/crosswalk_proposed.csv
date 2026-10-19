@@ -1,0 +1,247 @@
+﻿column,raw_pattern,harmonised,confidence,note,n_legacy,n_new
+Collision Type,same dir rear end,rear_end,high,,55759,0
+Collision Type,front to rear,rear_end,high,,0,14788
+Collision Type,same dir rend left turn,rear_end,medium,legacy rear-end with turning vehicle,743,0
+Collision Type,same dir rend right turn,rear_end,medium,legacy rear-end with turning vehicle,720,0
+Collision Type,straight movement angle,angle_turning,high,,30342,0
+Collision Type,angle,angle_turning,high,,0,10688
+Collision Type,angle meets left turn,angle_turning,medium,angle / turning conflicts,2033,0
+Collision Type,angle meets right turn,angle_turning,medium,angle / turning conflicts,1204,0
+Collision Type,angle meets left head on,angle_turning,medium,angle / turning conflicts,700,0
+Collision Type,rear to side,angle_turning,medium,angle / turning conflicts,0,2165
+Collision Type,head on left turn,angle_turning,low,legacy turning types have no exact equivalent in the new coarse list,12926,0
+Collision Type,same direction left turn,angle_turning,low,legacy turning types have no exact equivalent in the new coarse list,3715,0
+Collision Type,same direction right turn,angle_turning,low,legacy turning types have no exact equivalent in the new coarse list,3832,0
+Collision Type,same dir both left turn,angle_turning,low,legacy turning types have no exact equivalent in the new coarse list,719,0
+Collision Type,opposite dir both left turn,angle_turning,low,legacy turning types have no exact equivalent in the new coarse list,322,0
+Collision Type,head on,head_on,high,,3786,0
+Collision Type,front to front,head_on,high,,0,2763
+Collision Type,same direction sideswipe,sideswipe_same,high,,16227,0
+Collision Type,"sideswipe, same direction",sideswipe_same,high,,0,8018
+Collision Type,opposite direction sideswipe,sideswipe_opposite,high,,2883,0
+Collision Type,"sideswipe, opposite direction",sideswipe_opposite,high,,0,1803
+Collision Type,single vehicle,single_vehicle,high,,15872,5936
+Collision Type,other,other_unknown,medium,,19030,2867
+Collision Type,unknown,other_unknown,medium,,718,405
+Collision Type,rear to rear,other_unknown,medium,,0,584
+Vehicle Movement,moving constant speed,constant_speed,high,,67240,19602
+Vehicle Movement,slowing or stopping,slowing_stopping,high,,24454,5884
+Vehicle Movement,stopped in traffic lane,stopped_in_lane,high,,18400,0
+Vehicle Movement,stopped in traffic,stopped_in_lane,high,,0,4064
+Vehicle Movement,making left turn,turning_left,high,,16611,0
+Vehicle Movement,turning left,turning_left,high,,0,5627
+Vehicle Movement,making right turn,turning_right,high,,5415,0
+Vehicle Movement,turning right,turning_right,high,,0,2057
+Vehicle Movement,right turn on red,turning_right,high,,267,0
+Vehicle Movement,making u turn,u_turn,high,,1225,0
+Vehicle Movement,making u-turn,u_turn,high,,0,455
+Vehicle Movement,accelerating,accelerating_starting,high,,9659,3231
+Vehicle Movement,starting from lane,accelerating_starting,medium,,4507,0
+Vehicle Movement,backing,backing,high,,5783,2015
+Vehicle Movement,changing lanes,changing_lanes,high,,4682,1744
+Vehicle Movement,passing,passing,high,,954,0
+Vehicle Movement,overtaking/passing,passing,high,,0,577
+Vehicle Movement,parked,parked_parking,high,,2689,1141
+Vehicle Movement,parking,parked_parking,medium,,1934,0
+Vehicle Movement,starting from parked,parked_parking,medium,,1895,0
+Vehicle Movement,entering traffic lane,entering_leaving_lane,high,,819,1153
+Vehicle Movement,leaving traffic lane,entering_leaving_lane,high,,207,164
+Vehicle Movement,negotiating a curve,curve,high,,545,624
+Vehicle Movement,other,other_unknown,medium,,898,0
+Vehicle Movement,unknown,other_unknown,medium,,2819,0
+Vehicle Movement,skidding,other_unknown,medium,,690,0
+Vehicle Movement,driverless moving veh.,other_unknown,medium,,37,0
+Route Type,interstate (state),interstate,high,,3149,584
+Route Type,us (state),us_route,high,,7569,2071
+Route Type,maryland (state),state,high,,77077,0
+Route Type,maryland (state) route,state,high,,0,16950
+Route Type,county,county,high,,55574,0
+Route Type,county route,county,high,,0,17659
+Route Type,municipality,municipality,high,,9380,0
+Route Type,municipality route,municipality,high,,0,3560
+Route Type,ramp,ramp,high,,579,912
+Route Type,local route,local,high,,0,972
+Route Type,other public roadway,other,medium,,1129,457
+Route Type,government,other,medium,,627,0
+Route Type,government route,other,medium,,0,184
+Route Type,service road,other,medium,,40,11
+Route Type,unknown,other,medium,,20,0
+Route Type,bicycle route,other,medium,,0,562
+Route Type,spur,other,medium,,0,471
+Route Type,private route,other,medium,,0,355
+Route Type,crossover,other,medium,,0,321
+Light,daylight,daylight,high,,116150,35239
+Light,dark lights on,dark_lighted,high,,39551,0
+Light,dark - lighted,dark_lighted,high,,0,11265
+Light,dark no lights,dark_unlit,high,,4966,0
+Light,dark - not lighted,dark_unlit,high,,0,1708
+Light,dark -- unknown lighting,dark_unknown,high,,1578,0
+Light,dark - unknown lighting,dark_unknown,high,,0,269
+Light,dusk,dusk,high,,3935,655
+Light,dawn,dawn,high,,3472,488
+Light,other,other_unknown,high,,342,143
+Light,unknown,other_unknown,high,,677,250
+Traffic Control,no controls,none,high,,68626,23082
+Traffic Control,traffic signal,signal,high,,58898,0
+Traffic Control,traffic control signal,signal,high,,0,16414
+Traffic Control,lane use control signal,signal,medium,,0,320
+Traffic Control,other signal,signal,medium,,0,120
+Traffic Control,ramp meter signal,signal,medium,,0,6
+Traffic Control,flashing traffic signal,flashing_signal,high,,2132,0
+Traffic Control,flashing traffic control signal,flashing_signal,high,,0,774
+Traffic Control,flashing school zone signal,flashing_signal,high,,0,3
+Traffic Control,stop sign,stop_sign,high,,12488,2872
+Traffic Control,yield sign,yield_sign,high,,1727,430
+Traffic Control,warning sign,warning_or_school_sign,medium,,154,0
+Traffic Control,other warning sign,warning_or_school_sign,medium,,0,69
+Traffic Control,intersection ahead warning sign,warning_or_school_sign,medium,,0,64
+Traffic Control,curve ahead warning sign,warning_or_school_sign,medium,,0,23
+Traffic Control,reduce speed ahead warning sign,warning_or_school_sign,medium,,0,9
+Traffic Control,school zone sign device,warning_or_school_sign,medium,,16,0
+Traffic Control,school zone sign,warning_or_school_sign,medium,,0,18
+Traffic Control,school zone,warning_or_school_sign,medium,,0,6
+Traffic Control,pedestrian crossing sign,warning_or_school_sign,medium,,0,282
+Traffic Control,pedestrian crossing,warning_or_school_sign,medium,,0,197
+Traffic Control,bicycle crossing sign,warning_or_school_sign,medium,,0,4
+Traffic Control,railway crossing device,railroad,high,,44,0
+Traffic Control,flashing railroad crossing signal*,railroad,high,,0,8
+Traffic Control,railroad crossing,railroad,high,,0,1
+Traffic Control,person*,person,high,,282,43
+Traffic Control,other,other_unknown,medium,,1991,219
+Traffic Control,unknown,other_unknown,medium,,285,0
+Traffic Control,other pavement marking*,other_unknown,medium,,0,157
+Vehicle Going Dir,north,north,high,,47647,0
+Vehicle Going Dir,northbound,north,high,,0,10988
+Vehicle Going Dir,south,south,high,,46687,0
+Vehicle Going Dir,southbound,south,high,,0,10272
+Vehicle Going Dir,east,east,high,,35296,0
+Vehicle Going Dir,eastbound,east,high,,0,7806
+Vehicle Going Dir,west,west,high,,34766,0
+Vehicle Going Dir,westbound,west,high,,0,7439
+Vehicle Going Dir,unknown,unknown_or_off_road,medium,,5031,1437
+Vehicle Going Dir,not on roadway,unknown_or_off_road,medium,,0,3006
+Agency Name,montgomery county police,montgomery_county_police,high,,138376,0
+Agency Name,montgomery,montgomery_county_police,high,,10659,42103
+Agency Name,rockville police departme,rockville_police,high,,9839,0
+Agency Name,rockville,rockville_police,high,,630,3416
+Agency Name,gaithersburg police depar,gaithersburg_police,high,,7841,0
+Agency Name,gaithersburg,gaithersburg_police,high,,390,3191
+Agency Name,takoma park police depart,takoma_park_police,high,,2993,0
+Agency Name,takoma,takoma_park_police,high,,157,915
+Agency Name,maryland-national capital,park_police,high,,1154,0
+Agency Name,mcpark,park_police,high,,77,392
+Weather,clear,clear,high,,116780,39305
+Weather,cloudy,cloudy,high,,17295,4517
+Weather,raining,rain,high,,20609,0
+Weather,rain,rain,high,,0,5026
+Weather,snow,winter_precip,high,,1444,457
+Weather,blowing snow,winter_precip,high,,115,95
+Weather,wintry mix,winter_precip,high,,391,0
+Weather,sleet,winter_precip,high,,218,0
+Weather,sleet or hail,winter_precip,high,,0,18
+Weather,freezing rain or freezing drizzle,winter_precip,high,,0,79
+Weather,foggy,fog,high,,676,0
+Weather,"fog, smog, smoke",fog,high,,0,122
+Weather,severe winds,wind_debris,high,,154,0
+Weather,severe crosswinds,wind_debris,high,,0,36
+Weather,"blowing sand, soil, dirt",wind_debris,high,,15,1
+Weather,other,other_unknown,high,,370,0
+Weather,unknown,other_unknown,high,,693,361
+Surface Condition,dry,dry,high,,120577,36973
+Surface Condition,wet,wet,high,,28429,6966
+Surface Condition,water(standing/moving),wet,high,,41,0
+Surface Condition,"water (standing, moving)",wet,high,,0,16
+Surface Condition,ice,snow_ice,high,,1058,0
+Surface Condition,ice/frost,snow_ice,high,,0,262
+Surface Condition,snow,snow_ice,high,,938,357
+Surface Condition,slush,snow_ice,high,,204,149
+Surface Condition,other,other_unknown,medium,,164,75
+Surface Condition,unknown,other_unknown,medium,,509,0
+Surface Condition,"mud, dirt, gravel",other_unknown,medium,,46,11
+Surface Condition,oil,other_unknown,medium,,28,1
+Surface Condition,sand,other_unknown,medium,,4,6
+Vehicle Damage Extent,no damage,no_damage,high,,6244,506
+Vehicle Damage Extent,superficial,superficial,high,,43877,13384
+Vehicle Damage Extent,functional,functional,high,,44993,11516
+Vehicle Damage Extent,disabling,disabling_or_destroyed,high,,62354,20778
+Vehicle Damage Extent,destroyed,disabling_or_destroyed,medium,category absent in the new format; probably merged into 'disabling',7610,0
+Vehicle Damage Extent,unknown,unknown_or_not_at_scene,medium,,6620,0
+Vehicle Damage Extent,other,unknown_or_not_at_scene,medium,,102,0
+Vehicle Damage Extent,vehicle not at scene,unknown_or_not_at_scene,medium,,0,3833
+Vehicle First Impact Location,underside,underside_top,high,,524,214
+Vehicle First Impact Location,roof top,underside_top,high,,354,0
+Vehicle First Impact Location,top,underside_top,high,,0,287
+Vehicle First Impact Location,non-collision,non_collision_cargo,high,,394,506
+Vehicle First Impact Location,cargo loss,non_collision_cargo,high,,0,48
+Vehicle First Impact Location,unknown,unknown_or_not_at_scene,high,,3082,0
+Vehicle First Impact Location,vehicle not at scene,unknown_or_not_at_scene,high,,0,3833
+Vehicle Body Type,passenger car,passenger_car,high,,119109,32107
+Vehicle Body Type,station wagon,passenger_car,high,,692,302
+Vehicle Body Type,limousine,passenger_car,high,,16,0
+Vehicle Body Type,large limo,passenger_car,high,,0,1
+Vehicle Body Type,(sport) utility vehicle,suv,medium,,15990,0
+Vehicle Body Type,sport utility vehicle,suv,medium,,0,7954
+Vehicle Body Type,pickup truck,pickup,high,,6787,0
+Vehicle Body Type,pickup,pickup,high,,0,2603
+Vehicle Body Type,other light trucks*,pickup,medium,,1909,0
+Vehicle Body Type,van,van,high,,4958,0
+Vehicle Body Type,van - passenger*,van,high,,0,1110
+Vehicle Body Type,van - cargo,van,high,,0,288
+Vehicle Body Type,medium/heavy trucks*,truck_medium_heavy,medium,,1469,0
+Vehicle Body Type,truck tractor,truck_medium_heavy,medium,,500,167
+Vehicle Body Type,single-unit truck,truck_medium_heavy,medium,,0,406
+Vehicle Body Type,other trucks,truck_medium_heavy,medium,,0,641
+Vehicle Body Type,cargo van/light truck 2 axles*,truck_medium_heavy,medium,,1858,0
+Vehicle Body Type,transit bus,bus_transit,high,,3642,0
+Vehicle Body Type,bus - transit,bus_transit,high,,0,1288
+Vehicle Body Type,school bus,bus_school,high,,2975,0
+Vehicle Body Type,bus - school,bus_school,high,,0,1132
+Vehicle Body Type,other bus,bus_other,high,,418,0
+Vehicle Body Type,cross country bus,bus_other,high,,31,0
+Vehicle Body Type,bus - other type,bus_other,high,,0,44
+Vehicle Body Type,bus - mini,bus_other,high,,0,24
+Vehicle Body Type,bus - cross country,bus_other,high,,0,5
+Vehicle Body Type,motorcycle,motorcycle_moped,high,,889,0
+Vehicle Body Type,moped,motorcycle_moped,high,,87,0
+Vehicle Body Type,autocycle,motorcycle_moped,high,,41,15
+Vehicle Body Type,motorcycle - 2 wheeled,motorcycle_moped,high,,0,273
+Vehicle Body Type,motorcycle - 3 wheeled,motorcycle_moped,high,,0,3
+Vehicle Body Type,moped or motorized bicycle,motorcycle_moped,high,,0,78
+Vehicle Body Type,police vehicle/*,emergency_vehicle,high,,3616,0
+Vehicle Body Type,ambulance/*,emergency_vehicle,high,,651,0
+Vehicle Body Type,fire vehicle/*,emergency_vehicle,high,,733,0
+Vehicle Body Type,recreational vehicle,special_other,medium,,197,0
+Vehicle Body Type,motor home,special_other,medium,,0,1
+Vehicle Body Type,snowmobile,special_other,medium,,123,9
+Vehicle Body Type,all terrain vehicle (atv),special_other,medium,,119,0
+Vehicle Body Type,all-terrain vehicle/*,special_other,medium,,0,46
+Vehicle Body Type,recreational off-highway*,special_other,medium,,0,8
+Vehicle Body Type,farm vehicle,special_other,medium,,21,0
+Vehicle Body Type,farm equipment*,special_other,medium,,0,4
+Vehicle Body Type,construction equipment*,special_other,medium,,0,34
+Vehicle Body Type,golf cart,special_other,medium,,0,3
+Vehicle Body Type,low speed vehicle,special_other,medium,,34,10
+Vehicle Body Type,other,other_unknown,high,,1539,462
+Vehicle Body Type,unknown,other_unknown,high,,1061,204
+Driver Distracted By,not distracted,not_distracted,high,,106718,33026
+Driver Distracted By,unknown,unknown,high,,32803,11629
+Driver Distracted By,no driver present,unknown,high,,279,0
+Driver Distracted By,other cellular phone related,phone_or_device,high,,372,0
+Driver Distracted By,other electronic device (navigational palm pilot),phone_or_device,high,,325,0
+Driver Distracted By,talking or listening to cellular phone,phone_or_device,high,,282,0
+Driver Distracted By,texting from a cellular phone,phone_or_device,high,,67,0
+Driver Distracted By,dialing cellular phone,phone_or_device,high,,48,0
+Driver Distracted By,using device object brought into vehicle,phone_or_device,high,,63,0
+Driver Distracted By,talking/listening,phone_or_device,high,,0,107
+Driver Distracted By,"manually operating (dialing, playing game, etc.)",phone_or_device,high,,0,63
+Driver Distracted By,by other occupants,in_vehicle_activity,high,,418,0
+Driver Distracted By,by moving object in vehicle,in_vehicle_activity,high,,212,0
+Driver Distracted By,eating or drinking,in_vehicle_activity,high,,196,0
+Driver Distracted By,adjusting audio and or climate controls,in_vehicle_activity,high,,134,0
+Driver Distracted By,using other device controls integral to vehicle,in_vehicle_activity,high,,92,0
+Driver Distracted By,smoking related,in_vehicle_activity,high,,26,0
+Driver Distracted By,distracted by outside person object or event,external_distraction,high,,970,0
+Driver Distracted By,inattentive or lost in thought,inattentive_other,medium,,4320,0
+Driver Distracted By,other distraction,inattentive_other,medium,,3245,0
+Driver Distracted By,"other action (looking away from task, etc.)",inattentive_other,medium,,0,1291
+Driver Distracted By,looked but did not see,looked_but_did_not_see,medium,"legacy-only category (21k rows, ~none in new format); kept separate so it can be merged or dropped as a sensitivity choice",21546,0

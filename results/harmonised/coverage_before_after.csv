@@ -1,0 +1,16 @@
+column,harmonised,raw_overlap_pct,harmonised_overlap_pct
+Driver Substance Abuse,alcohol_susp,0.0,100.0
+Driver Substance Abuse,drug_susp,0.0,100.0
+Vehicle First Impact Location,impact_zone_h,0.7,100.0
+Vehicle Going Dir,direction_h,3.1,100.0
+Route Type,route_h,8.2,99.5
+Collision Type,collision_h,20.2,100.0
+Agency Name,agency_h,27.9,100.0
+Traffic Control,control_h,58.1,100.0
+Vehicle Movement,movement_h,68.9,98.0
+Vehicle Body Type,body_h,71.5,97.7
+Light,light_h,73.1,100.0
+Driver Distracted By,distraction_h,84.4,89.2
+Weather,weather_h,86.7,100.0
+Vehicle Damage Extent,damage_h,91.8,100.0
+Surface Condition,surface_h,99.0,100.0

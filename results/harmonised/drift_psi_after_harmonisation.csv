@@ -1,0 +1,23 @@
+variable,psi,reading
+distraction_h,0.981,major drift
+route_h,0.249,moderate
+movement_h,0.224,moderate
+body_h,0.211,moderate
+y_fault (target),0.175,moderate
+impact_zone_h,0.128,moderate
+collision_h,0.122,moderate
+direction_h,0.109,moderate
+damage_h,0.063,stable
+speed_limit,0.053,stable
+control_h,0.052,stable
+vehicle_age,0.037,stable
+light_h,0.018,stable
+weather_h,0.015,stable
+alcohol_susp,0.011,stable
+surface_h,0.01,stable
+agency_h,0.006,stable
+report_type,0.005,stable
+crash_hour,0.002,stable
+drug_susp,0.001,stable
+y_injury_any (target),0.0,stable
+y_ksi (target),0.0,stable
