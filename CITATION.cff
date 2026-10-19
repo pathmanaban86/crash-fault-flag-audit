@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this code or the derived data, please cite the article below and this repository."
+title: "Code and data for: Reporting-format change and the reliability of police at-fault flags"
+abstract: >-
+  Pipeline that assigns Montgomery County (Maryland) driver crash records to the legacy or the new
+  (ACRS 2.0, 1 January 2024) reporting format, harmonises 12 coded fields, tests for label drift with
+  interrupted time series, evaluates temporal transfer of gradient-boosted models, and estimates the
+  sensitivity and false-flag rate of the police at-fault flag with a pair-count measurement model.
+type: software
+authors:
+  - family-names: "Pugazhendi"
+    given-names: "Pathmanaban"
+    email: "princepathu@gmail.com"
+    affiliation: "Department of Automobile Engineering, Easwari Engineering College, Chennai, India"
+version: "1.0.0"
+date-released: "2026-10-19"
+license: MIT
+repository-code: "https://github.com/your-github-account/crash-fault-flag-audit"
+keywords:
+  - crash data quality
+  - police-reported crash data
+  - at-fault flag
+  - interrupted time series
+  - label noise
+  - temporal transfer
+preferred-citation:
+  type: article
+  title: "Reporting-format change and the reliability of police at-fault flags: evidence from interrupted time series and a pair-count measurement model"
+  authors:
+    - family-names: "Pugazhendi"
+      given-names: "Pathmanaban"
+      affiliation: "Department of Automobile Engineering, Easwari Engineering College, Chennai, India"
+  journal: "Accident Analysis & Prevention"
+  year: 2026
+  status: submitted
+references:
+  - type: data
+    title: "Crash Reporting - Drivers Data"
+    authors:
+      - name: "Montgomery County, Maryland"
+    url: "https://data.montgomerycountymd.gov/Public-Safety/Crash-Reporting-Drivers-Data/mmzv-x632"
+    notes: "Dataset identifier mmzv-x632; snapshot retrieved October 2026."

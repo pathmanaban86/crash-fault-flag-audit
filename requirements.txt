@@ -1,0 +1,10 @@
+# Python packages for the pipeline (minimum versions; the reported run used the versions in docs/reproducibility.md)
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+lightgbm>=4.0
+statsmodels>=0.14
+matplotlib>=3.7
+# optional: combines the supplementary PDFs when LaTeX is available
+pypdf>=4.0

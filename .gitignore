@@ -1,0 +1,29 @@
+# pipeline outputs (regenerate with run_all.sh; reference results are in results/)
+outputs/
+# uncompressed data (the compressed copies are tracked)
+data/raw/export.csv
+data/harmonised/*.csv
+!data/harmonised/crosswalk_proposed.csv
+!data/harmonised/data_dictionary.csv
+!data/harmonised/vehicle_make_map.csv
+manuscript/manuscript_numbers.csv
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.blg
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
