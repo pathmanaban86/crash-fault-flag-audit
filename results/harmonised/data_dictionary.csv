@@ -1,0 +1,54 @@
+﻿column,dtype,missing_pct,n_unique,description
+report_number,str,0.0,125413,
+local_case_number,str,0.0,125295,
+person_id,str,0.0,222133,
+vehicle_id,str,0.0,222133,
+crash_datetime,datetime64[us],0.0,122369,
+crash_year,int32,0.0,12,
+crash_quarter,str,0.0,48,
+crash_month,int32,0.0,12,
+crash_dow,int32,0.0,7,
+crash_hour,int32,0.0,24,
+regime,str,0.0,2,Reporting format assigned per row from coding style (legacy UPPER-CASE vs new mixed-case); date is only a fallback
+regime_by_date,str,0.0,2,Regime from the 1 Jan 2024 date rule (for comparison)
+in_overlap_window,int64,0.0,2,1 if the crash falls between the first new-style and last legacy-style row
+report_type,str,0.0,3,
+collision_h,str,0.26,7,Common categories for 'Collision Type' (see crosswalk_proposed.csv)
+movement_h,str,0.93,14,Common categories for 'Vehicle Movement' (see crosswalk_proposed.csv)
+route_h,str,9.87,8,Common categories for 'Route Type' (see crosswalk_proposed.csv)
+light_h,str,0.65,7,Common categories for 'Light' (see crosswalk_proposed.csv)
+control_h,str,13.67,9,Common categories for 'Traffic Control' (see crosswalk_proposed.csv)
+direction_h,str,5.29,5,Common categories for 'Vehicle Going Dir' (see crosswalk_proposed.csv)
+agency_h,str,0.0,5,Common categories for 'Agency Name' (see crosswalk_proposed.csv)
+weather_h,str,6.01,7,Common categories for 'Weather' (see crosswalk_proposed.csv)
+surface_h,str,11.4,4,Common categories for 'Surface Condition' (see crosswalk_proposed.csv)
+damage_h,str,0.14,5,Common categories for 'Vehicle Damage Extent' (see crosswalk_proposed.csv)
+body_h,str,1.55,12,Common categories for 'Vehicle Body Type' (see crosswalk_proposed.csv)
+distraction_h,str,1.76,7,Common categories for 'Driver Distracted By' (see crosswalk_proposed.csv)
+impact_clock,float64,4.23,12,First impact location as clock position 1-12
+impact_zone_h,str,0.07,7,"front (11-1), right (2-4), rear (5-7), left (8-10), or non-clock categories"
+alcohol_susp,str,14.1,3,yes/no/unknown parsed from both formats of Driver Substance Abuse
+drug_susp,str,14.1,3,yes/no/unknown parsed from both formats of Driver Substance Abuse
+parked_vehicle,object,0.69,2,
+driverless_vehicle,object,0.0,2,
+license_state_group,str,0.0,6,
+speed_limit,float64,4.41,14,Speed limit; 0 and values outside 5-70 set to missing
+flag_speed_limit_invalid,int64,0.0,2,
+vehicle_year,float64,2.6,68,Vehicle year; <1950 or > crash year + 1 set to missing
+flag_vehicle_year_invalid,int64,0.0,2,
+vehicle_age,float64,2.6,64,Crash year minus vehicle year (floored at 0)
+latitude,float64,0.09,112448,Set to missing when outside the approximate county box
+longitude,float64,0.09,114654,Same as latitude
+flag_coord_outside_county,int64,0.0,2,
+make_h,object,2.37,1847,Vehicle make with abbreviations mapped (see vehicle_make_map.csv)
+road_name,string,12.09,4935,
+cross_street_name,string,21.54,7654,
+y_fault,float64,2.11,2,"1 = driver flagged at fault, 0 = not; NaN when 'Unknown' (legacy only)"
+injury_ord,float64,1.66,5,0 none ... 4 fatal
+y_injury_any,float64,1.66,2,1 if possible/minor/serious/fatal injury; NaN if injury missing
+y_ksi,float64,1.66,2,1 if suspected serious or fatal injury; NaN if injury missing
+flag_fault_unknown,int64,0.0,2,
+n_drivers_in_crash,int64,0.0,10,
+n_fault_yes_in_crash,float64,0.0,6,Number of drivers flagged at fault in the crash
+two_driver_crash,int64,0.0,2,
+zero_fault_two_driver,int64,0.0,2,Two-driver crash where no driver is flagged at fault

@@ -15,7 +15,7 @@ authors:
 version: "1.0.0"
 date-released: "2026-10-19"
 license: MIT
-repository-code: "https://github.com/your-github-account/crash-fault-flag-audit"
+repository-code: "https://github.com/pathmanaban86/crash-fault-flag-audit"
 keywords:
   - crash data quality
   - police-reported crash data

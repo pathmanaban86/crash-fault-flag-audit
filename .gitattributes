@@ -1,4 +1,4 @@
-*.csv.gz binary
-*.png binary
-*.drawio text eol=lf
 *.sh text eol=lf
+*.py text eol=lf
+*.csv text
+*.ipynb text
