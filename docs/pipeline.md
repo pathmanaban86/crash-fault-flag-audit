@@ -8,6 +8,7 @@ Steps run in this order; each reads the outputs of the previous ones.
 | 02 | `src/02_drift_experiments.py` | harmonised file | E1–E6 result tables |
 | 03 | `src/03_latent_label_model.py` | harmonised file | E7–E10 result tables |
 | 04 | `src/04_manuscript_assets.py` | outputs of 01–03 | `Fig_03`–`Fig_07`, supplementary figures, LaTeX tables |
+| 05 | `src/05_qie_analysis.py` | harmonised file | E11 result tables and figures (`Fig_E11*`) |
 
 Figs 1 and 2 of the manuscript are schematic diagrams (analytical framework and pair-count model) and are not
 produced by this code; the data figures produced by step 04 are therefore numbered from 3.
@@ -27,8 +28,10 @@ produced by this code; the data figures produced by step 04 are therefore number
 | E8 | simulation with injected label noise | `E8_simulation_recovery.csv`, `E8_heterogeneous_sensitivity_recovery.csv` | Section 5.6; Table S12; Fig. S8 |
 | E9 | covariate model for *s* | `E9_sensitivity_by_group.csv`, `E9_sensitivity_model_coefficients.csv` | Section 5.5; Fig. 5; Table S13 |
 | E10 | noise-corrected versus naive classifiers | `E10_corrected_vs_naive.csv` | Section 5.7; Table 4; Fig. 7 |
+| E11 | quasi-induced exposure: relative involvement ratios (naive, clean-pair, corrected) by period, change across the format change and placebo change, model check, year-by-year series; flag share of unidentified drivers | `E11_qie_by_period.csv`, `E11_qie_change.csv`, `E11_qie_model_check.csv`, `E11_qie_by_year.csv`, `E11_unidentified_drivers.csv`, `E11_unidentified_by_year.csv` | not in the current manuscript draft |
 
-E1–E6 files are in `results/experiments/`, E7–E10 files in `results/experiments_latent/`.
+E1–E6 files are in `results/experiments/`, E7–E10 files in `results/experiments_latent/`, E11 files in
+`results/experiments_qie/`.
 
 ## Key settings
 
@@ -39,6 +42,11 @@ E1–E6 files are in `results/experiments/`, E7–E10 files in `results/experime
   E9–E10 and 150 in the E8 simulation.
 * Transfer: trained on legacy records before 2022; adaptation data are new-format records from 2024; test data
   are new-format records from 2025 onwards. Every driver of a crash gets the crash's earliest timestamp.
-* Intervals: crash-clustered bootstrap, 200 resamples (E1–E3), 500 (E7, E10), 40 refits (E9).
+* Intervals: crash-clustered bootstrap, 200 resamples (E1–E3), 500 (E7, E10), 40 refits (E9), 1000 (E11 by
+  period; 300 for the E11 year-by-year series); Wilson intervals for the flag share of unidentified drivers.
+* E11 sample: two-driver crashes with both flags known and no parked vehicle; for each group, crashes in which
+  the group is known for both drivers. Periods: legacy 2020–2021 and 2022–2023 (placebo), new 2024–2026.
+  Groups: licence state other than Maryland; vehicle 15 or more years old; truck or bus (versus car, SUV, pickup
+  or van). Unidentified driver: neither licence state nor vehicle year or make recorded.
 * Interrupted time series: monthly OLS with a common linear trend and a level-change indicator from January 2024,
   Newey–West standard errors with three lags; placebo months at least 24 months from either end of the series.
