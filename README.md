@@ -74,7 +74,7 @@ cell) to use another location.
 
 | Variable | Used by | Meaning |
 |---|---|---|
-| `CRASH_DATA_PATH` | 01 | path to the raw `export.csv` |
+| `CRASH_DATA_PATH` | 01, 05 | path to the raw `export.csv` |
 | `CRASH_PREP_DIR` | 01–04 | harmonised outputs |
 | `CRASH_EXP_DIR` | 02, 04 | outputs of E1–E6 |
 | `CRASH_LAT_DIR` | 03, 04 | outputs of E7–E10 |

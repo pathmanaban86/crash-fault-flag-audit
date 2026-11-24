@@ -8,7 +8,7 @@ Steps run in this order; each reads the outputs of the previous ones.
 | 02 | `src/02_drift_experiments.py` | harmonised file | E1–E6 result tables |
 | 03 | `src/03_latent_label_model.py` | harmonised file | E7–E10 result tables |
 | 04 | `src/04_manuscript_assets.py` | outputs of 01–03 | `Fig_03`–`Fig_07`, supplementary figures, LaTeX tables |
-| 05 | `src/05_qie_analysis.py` | harmonised file | E11 result tables and figures (`Fig_E11*`) |
+| 05 | `src/05_qie_analysis.py` | harmonised file; raw `export.csv` (Circumstance field) | E11 result tables and figures (`Fig_E11*`) |
 
 Figs 1 and 2 of the manuscript are schematic diagrams (analytical framework and pair-count model) and are not
 produced by this code; the data figures produced by step 04 are therefore numbered from 3.
@@ -28,7 +28,7 @@ produced by this code; the data figures produced by step 04 are therefore number
 | E8 | simulation with injected label noise | `E8_simulation_recovery.csv`, `E8_heterogeneous_sensitivity_recovery.csv` | Section 5.6; Table S12; Fig. S8 |
 | E9 | covariate model for *s* | `E9_sensitivity_by_group.csv`, `E9_sensitivity_model_coefficients.csv` | Section 5.5; Fig. 5; Table S13 |
 | E10 | noise-corrected versus naive classifiers | `E10_corrected_vs_naive.csv` | Section 5.7; Table 4; Fig. 7 |
-| E11 | quasi-induced exposure: relative involvement ratios (naive, clean-pair, corrected) by period, change across the format change and placebo change, model check, year-by-year series; flag share of unidentified drivers | `E11_qie_by_period.csv`, `E11_qie_change.csv`, `E11_qie_model_check.csv`, `E11_qie_by_year.csv`, `E11_unidentified_drivers.csv`, `E11_unidentified_by_year.csv` | not in the current manuscript draft |
+| E11 | quasi-induced exposure: relative involvement ratios (naive, clean-pair, corrected) by period, change across the format change and placebo change, model check, year-by-year series; flag share of unidentified drivers; driver contributing actions in new-format crashes | `E11_qie_by_period.csv`, `E11_qie_change.csv`, `E11_qie_model_check.csv`, `E11_qie_by_year.csv`, `E11_unidentified_drivers.csv`, `E11_unidentified_by_year.csv`, `E11_contributing_actions.csv` | not in the current manuscript draft |
 
 E1–E6 files are in `results/experiments/`, E7–E10 files in `results/experiments_latent/`, E11 files in
 `results/experiments_qie/`.

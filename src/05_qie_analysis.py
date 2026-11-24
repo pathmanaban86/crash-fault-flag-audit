@@ -18,8 +18,9 @@
 #
 # A final section locates the lost flags: drivers with neither a licence state nor vehicle details (typically drivers who
 # could not be identified at the scene) and their share flagged at fault, by period and by year.
+# A last check uses the driver contributing actions that the new format records in the raw `Circumstance` field.
 #
-# Reads `harmonised/crash_drivers_harmonised.csv`; writes to `<data folder>/experiments_qie/`. Runtime about 1-2 min.
+# Reads `harmonised/crash_drivers_harmonised.csv` and the raw `export.csv` (Circumstance field only); writes to `<data folder>/experiments_qie/`. Runtime about 1-2 min.
 
 # %%
 # 1. SETUP
@@ -218,7 +219,50 @@ unident_year = pd.DataFrame(uy)
 unident_year.to_csv(os.path.join(OUT_DIR, "E11_unidentified_by_year.csv"), index=False)
 
 # %%
-# 7. FIGURES: one file per panel, plus a stacked vertical version
+# 7. A SECOND INDICATOR IN THE NEW FORMAT: DRIVER CONTRIBUTING ACTIONS
+# In the new format the raw `Circumstance` field lists driver contributing actions (for example "Failed to Yield
+# Right-of-Way", "Followed Too Closely"); in the legacy format it describes road and weather conditions only. If the
+# zero-flag crashes of the new format were crashes without a culprit, a contributing action would be recorded in them about
+# as rarely as for unflagged drivers. The evasive action "Swerved or Avoided Due to ..." is not counted.
+RAW_PATH = os.environ.get("CRASH_DATA_PATH", os.path.join(os.path.dirname(PREP_DIR.rstrip("/")), "export.csv"))
+EVASIVE = "Swerved or Avoided Due to Wind, Slippery Surface, Motor Vehicle, Object, Non-Motorist in Roadway, etc"
+if os.path.exists(RAW_PATH):
+    circ = pd.read_csv(RAW_PATH, usecols=["Person ID", "Circumstance"], low_memory=False).rename(
+        columns={"Person ID": "person_id", "Circumstance": "circumstance"})
+    rest = circ.circumstance.fillna("").str.replace(EVASIVE, "", regex=False).str.replace(r"[,\s]", "", regex=True)
+    circ["dca"] = rest.str.len() > 0
+    two = two.drop(columns=["dca"], errors="ignore").merge(circ[["person_id", "dca"]], on="person_id", how="left")
+    newp = two[(two.regime == "new") & two.year.between(2024, 2026)].copy()
+    newp["ndca"] = newp.groupby("report_number").dca.transform("sum")
+    newp["unid_in_crash"] = newp.groupby("report_number").id_class.transform(lambda v: (v == "unidentified").any())
+    groups = {"flagged drivers": newp.y_fault == 1,
+              "unflagged drivers, one-flag crashes": (newp.y_fault == 0) & (newp.nflag == 1),
+              "drivers in zero-flag crashes": newp.nflag == 0,
+              "unidentified drivers": newp.id_class == "unidentified",
+              "other driver, crashes with an unidentified driver": newp.unid_in_crash & (newp.id_class != "unidentified")}
+    rows = []
+    for name, m in groups.items():
+        k, n = int(newp.loc[m, "dca"].sum()), int(m.sum()); lo, hi = wilson(k, n)
+        rows.append(dict(level="driver", group=name, year="2024-26", n=n, share_with_action=k / n, lo=lo, hi=hi))
+    cr = newp.groupby("report_number").agg(nflag=("nflag", "first"), ndca=("ndca", "first"), year=("year", "first"))
+    for yr in ["2024-26", 2024, 2025, 2026]:
+        c = cr if yr == "2024-26" else cr[cr.year == yr]
+        for nf in (0, 1, 2):
+            x = c[c.nflag == nf]; k, n = int((x.ndca > 0).sum()), len(x); lo, hi = wilson(k, n)
+            rows.append(dict(level="crash", group=f"{nf} flagged", year=yr, n=n, share_with_action=k / n, lo=lo, hi=hi,
+                             share_one_action=(x.ndca == 1).mean(), share_two_actions=(x.ndca == 2).mean()))
+    one = newp[(newp.nflag == 1) & (newp.ndca == 1) & newp.dca]
+    rows.append(dict(level="crash", group="one flagged, one action: action on flagged driver", year="2024-26", n=len(one),
+                     share_with_action=one.y_fault.mean(), lo=wilson(int(one.y_fault.sum()), len(one))[0],
+                     hi=wilson(int(one.y_fault.sum()), len(one))[1]))
+    actions = pd.DataFrame(rows)
+    actions.to_csv(os.path.join(OUT_DIR, "E11_contributing_actions.csv"), index=False)
+    print(actions.round(3).to_string())
+else:
+    print("Raw file not found at", RAW_PATH, "- contributing-action check skipped (set CRASH_DATA_PATH).")
+
+# %%
+# 8. FIGURES: one file per panel, plus a stacked vertical version
 def draw(ax, g, label):
     xs = np.arange(len(PERIODS)); off = {"naive": -0.18, "clean": 0.0, "corrected": 0.18}
     for e in EST:
