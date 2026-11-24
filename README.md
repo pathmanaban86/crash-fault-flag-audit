@@ -15,6 +15,8 @@ uses that change as a natural experiment on the stability of police-reported lab
 * a pair-count measurement model that estimates the sensitivity *s* and false-flag rate *f* of the at-fault
   flag from two-driver crashes, with a covariate model, robustness checks, a simulation with injected noise and
   a noise-corrected classifier (E7–E10);
+* a quasi-induced exposure analysis that tests whether the format change alters the relative involvement ratios
+  of driver and vehicle groups, with a misclassification-corrected estimator and a placebo comparison (E11);
 * a script that regenerates the data figures and the tables of the manuscript and its supplement.
 
 Main results of the reported run (snapshot of 222,133 driver records in 125,413 crashes, 2015–2026): the share of
@@ -34,12 +36,14 @@ fell from 0.994 to 0.632 (95% CI 0.625–0.639). See the manuscript for the full
 │   ├── 01_preprocess_harmonise.py   format assignment, crosswalk, cleaning, coverage/PSI/detectability
 │   ├── 02_drift_experiments.py      E1–E6 (transfer, ablation, strategies, paired counts, ITS, agencies)
 │   ├── 03_latent_label_model.py     E7–E10 (s and f, simulation, covariate model, noise-corrected models)
-│   └── 04_manuscript_assets.py      data figures (PNG, 1000 dpi) and LaTeX tables, main and supplementary
-├── notebooks/                  the same four steps as Google Colab notebooks
+│   ├── 04_manuscript_assets.py      data figures (PNG, 1000 dpi) and LaTeX tables, main and supplementary
+│   └── 05_qie_analysis.py           E11 (quasi-induced exposure across the format change; its figures)
+├── notebooks/                  the same five steps as Google Colab notebooks
 ├── results/                    result tables of the reported run (reference for checking a reproduction)
 │   ├── harmonised/             crosswalk, data dictionary, coverage, PSI, format detectability
 │   ├── experiments/            E1–E6
-│   └── experiments_latent/     E7–E10
+│   ├── experiments_latent/     E7–E10
+│   └── experiments_qie/        E11
 └── docs/
     ├── pipeline.md             which step produces which figure, table and section of the paper
     └── reproducibility.md      environment, seeds, run time, how to compare a rerun with results/
@@ -59,7 +63,7 @@ bash run_all.sh                 # writes everything to ./outputs
 ```
 
 `run_all.sh` reports whether the raw file is the snapshot analysed in the paper (by its SHA-256 checksum), runs
-the four pipeline steps, and writes the results to `outputs/`, with the same file names as in `results/`.
+the five pipeline steps, and writes the results to `outputs/`, with the same file names as in `results/`.
 A different path to the raw file can be given with `CRASH_DATA_PATH=/path/to/export.csv bash run_all.sh`.
 
 ### Google Colab
@@ -75,7 +79,9 @@ cell) to use another location.
 | `CRASH_EXP_DIR` | 02, 04 | outputs of E1–E6 |
 | `CRASH_LAT_DIR` | 03, 04 | outputs of E7–E10 |
 | `CRASH_MS_DIR` | 04 | figures and tables |
+| `CRASH_QIE_DIR` | 05 | outputs and figures of E11 |
 | `N_BOOT`, `N_BOOT_MODEL` | 02, 03 | bootstrap sizes (defaults 200 for E1–E3; 500 and 40 for E7–E10) |
+| `N_BOOT_QIE` | 05 | bootstrap size for E11 (default 1000; at most 300 for the year-by-year series) |
 
 ## Data
 

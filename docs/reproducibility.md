@@ -23,7 +23,7 @@ python -m pip freeze > outputs/pip_freeze.txt
 ## Checking a rerun
 
 1. Run `bash run_all.sh`.
-2. Compare `outputs/harmonised/`, `outputs/experiments/` and `outputs/experiments_latent/` with the
+2. Compare `outputs/harmonised/`, `outputs/experiments/`, `outputs/experiments_latent/` and `outputs/experiments_qie/` with the
    corresponding folders in `results/`, for example:
 
    ```python
@@ -35,7 +35,7 @@ python -m pip freeze > outputs/pip_freeze.txt
 
 ## Run time
 
-On a two-core test machine, `run_all.sh` took about 9 minutes. Step 02 (bootstrapped gradient-boosting models)
+On a two-core test machine, `run_all.sh` took about 9 minutes for steps 01–04; step 05 (E11) adds about 1 minute. Step 02 (bootstrapped gradient-boosting models)
 takes the longest. Bootstrap sizes can be reduced for a quick check with the environment variables `N_BOOT` and
 `N_BOOT_MODEL`, at the cost of wider and slightly different intervals.
 

@@ -31,11 +31,13 @@ export CRASH_PREP_DIR="$OUT/harmonised"
 export CRASH_EXP_DIR="$OUT/experiments"
 export CRASH_LAT_DIR="$OUT/experiments_latent"
 export CRASH_MS_DIR="$OUT/manuscript"
+export CRASH_QIE_DIR="$OUT/experiments_qie"
 export MPLBACKEND=Agg
 
 python src/01_preprocess_harmonise.py      # format assignment, harmonisation, drift diagnostics
 python src/02_drift_experiments.py         # E1-E6
 python src/03_latent_label_model.py        # E7-E10
 python src/04_manuscript_assets.py         # data figures (PNG, 1000 dpi) and LaTeX tables
+python src/05_qie_analysis.py             # E11: quasi-induced exposure across the format change
 
-echo "Done. Results are in $OUT/; compare $OUT/harmonised, $OUT/experiments and $OUT/experiments_latent with results/."
+echo "Done. Results are in $OUT/; compare $OUT/harmonised, $OUT/experiments, $OUT/experiments_latent and $OUT/experiments_qie with results/."
